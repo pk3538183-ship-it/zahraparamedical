@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zahra Paramedical</title>
-<style>body{font-family:sans-serif;background:#f5f7fb;margin:0}header{background:#0d47a1;color:#fff;padding:20px;text-align:center}main{max-width:800px;margin:20px auto;background:#fff;padding:20px;border-radius:12px} .btn{background:#0d47a1;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;display:inline-block}</style>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahra Paramedical Institute - ZPI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f9ff;color:#222}
+.header{background:#0a4a7a;color:white;padding:20px 15px;text-align:center;position:sticky;top:0;z-index:100}
+.header h1{font-size:24px;letter-spacing:1px}
+.header p{opacity:0.9;font-size:14px;margin-top:5px}
+.hero{background:linear-gradient(135deg,#0a4a7a 0%,#0f6cb6 100%);color:white;padding:50px 20px;text-align:center}
+.hero h2{font-size:28px;margin-bottom:10px}
+.hero p{font-size:16px;opacity:0.95}
+.btn{display:inline-block;background:#00c853;color:white;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:20px;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+.section{padding:35px 15px;max-width:1100px;margin:auto}
+.section-title{text-align:center;color:#0a4a7a;font-size:26px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 15px rgba(0,0,0,0.08);text-align:center;border-top:4px solid #0a4a7a}
+.card h3{color:#0a4a7a;margin-bottom:5px}
+.verify-wrap{background:white;border-radius:15px;padding:25px;box-shadow:0 5px 25px rgba(0,0,0,0.1);max-width:600px;margin:auto;text-align:center}
+.verify-wrap input{width:75%;padding:14px;border-radius:8px;border:2px solid #0a4a7a;font-size:16px;outline:none}
+.verify-wrap button{padding:14px 22px;background:#0a4a7a;color:white;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:10px}
+.footer{background:#082f4a;color:#cdd9e4;text-align:center;padding:25px 15px;margin-top:30px;font-size:14px}
+.footer b{color:white}
+</style>
 </head>
 <body>
-<header><h1>Zahra Paramedical Institute</h1><p>Official Student Verification</p></header>
-<main><h2>Welcome</h2><a class="btn" href="verify.html">Verify Certificate</a><div id="list"></div></main>
-<script>fetch('students.json').then(r=>r.json()).then(d=>{let h='<h3>Students</h3>';d.forEach(s=>{h+=`<p>${s.id} - ${s.name} - <a href="verify.html?id=${s.id}">Verify</a></p>`});document.getElementById('list').innerHTML=h})</script>
+
+<div class="header">
+<h1>ZAHRA PARAMEDICAL INSTITUTE</h1>
+<p>Govt. Registered | Excellence in Medical Education</p>
+</div>
+
+<div class="hero">
+<h2>Build Your Future in Healthcare</h2>
+<p>Approved Diplomas in OT, Lab, X-Ray & Dispenser<br>100% Online Verified Certificates</p>
+<a class="btn" href="#verify">🔍 Verify Certificate</a>
+</div>
+
+<div class="section">
+<h2 class="section-title">Our Courses</h2>
+<div class="cards">
+<div class="card"><h3>OT Technician</h3><p>2 Years Diploma</p></div>
+<div class="card"><h3>Lab Technician</h3><p>2 Years Diploma</p></div>
+<div class="card"><h3>X-Ray Technician</h3><p>2 Years Diploma</p></div>
+<div class="card"><h3>Dispenser</h3><p>1 Year Diploma</p></div>
+<div class="card"><h3>LHV / CMW</h3><p>2 Years Diploma</p></div>
+<div class="card"><h3>Nursing Assistant</h3><p>1 Year Course</p></div>
+</div>
+</div>
+
+<div class="section" id="verify">
+<h2 class="section-title">Online Verification Portal</h2>
+<div class="verify-wrap">
+<h3 style="color:#0a4a7a;margin-bottom:10px;">Student Verification</h3>
+<p>Enter Roll No / Certificate ID</p>
+<br>
+<input type="text" id="roll" placeholder="e.g. ZPI-001 or ZPI-101">
+<br>
+<button onclick="doVerify()">VERIFY NOW</button>
+<p style="font-size:12px;margin-top:12px;color:#666;">Example: ZPI-001, ZPI-002</p>
+</div>
+</div>
+
+<div class="section" style="text-align:center;background:white;border-radius:15px;">
+<h2 class="section-title">Why Choose ZPI?</h2>
+<p>✅ Government Registered Institute &nbsp; ✅ Experienced Faculty<br>✅ Clinical Training &nbsp; ✅ Lifetime Online Verification</p>
+</div>
+
+<div class="footer">
+<p><b>Zahra Paramedical Institute</b></p>
+<p>Phone: 03XX-XXXXXXX | Email: info@zahraparamedical.edu.pk</p>
+<p style="margin-top:10px;">© 2026 Zahra Paramedical Institute. All Rights Reserved.</p>
+<p>Website: pk3538183-ship-it.github.io/zahraparamedical</p>
+</div>
+
+<script>
+function doVerify(){
+  let id = document.getElementById('roll').value.trim();
+  if(!id){ alert('Please Enter Roll No'); return; }
+  window.location.href = 'verify.html?id=' + encodeURIComponent(id);
+}
+</script>
 </body>
 </html>
