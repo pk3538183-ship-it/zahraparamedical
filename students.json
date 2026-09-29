@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ZPI-001",
+    "name": "Ali Khan",
+    "father": "Ahmed Khan",
+    "course": "OT Technician",
+    "session": "2024-25",
+    "date": "2025-06-30"
+  },
+  {
+    "id": "ZPI-002",
+    "name": "Sana Bibi",
+    "father": "Gul Khan",
+    "course": "Lab Technician",
+    "session": "2024-25",
+    "date": "2025-06-30"
+  }
+]
