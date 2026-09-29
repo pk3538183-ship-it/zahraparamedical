@@ -1,23 +1,84 @@
  <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verify Certificate - Zahra Paramedical</title>
+<title>Certificate Verification - ZPI</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#eef5ff;min-height:100vh}
-.header{background:#0a4a7a;color:white;padding:18px;text-align:center}
-.header a{color:white;text-decoration:none;font-weight:bold}
-.card{max-width:700px;margin:30px auto;background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center}
-.loading{color:#0a4a7a;font-size:18px;padding:40px}
-.success{border:2px solid #00c853;border-radius:12px;padding:20px;background:#f0fff4}
-.success h2{color:#00c853}
-.fail{border:2px solid #d50000;border-radius:12px;padding:20px;background:#fff0f0}
-.fail h2{color:#d50000}
-.info-table{width:100%;text-align:left;margin-top:20px;border-collapse:collapse}
-.info-table td{padding:12px;border-bottom:1px solid #eee}
-.info-table td:first-child{font-weight:bold;color:#0a4a7a;width:40%}
-.badge{display:inline-block;background:#0a4a7a;color:white;padding:6px 14px;border-radius:20px;font-size:12px;margin:5px}
-.btn{margin-top:20px;display:inline-block;background:#0a4a7a;color:white;padding:12px 25px;border-radius:25px;text-decoration:none}
-.qr{margin:20px auto;width:150px;height:150px;background:#f5f5f5;border:1px dashed #aaa;display:flex
+body{font-family:Arial;background:#eef5ff;padding:20px}
+.box{max-width:600px;margin:30px auto;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.head{padding:25px;text-align:center;color:#fff}
+.head.green{background:#16a34a}
+.head.red{background:#dc2626}
+.content{padding:25px}
+.row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee}
+.row b{color:#555} .row span{color:#111;font-weight:bold}
+.btn{display:block;text-align:center;margin-top:20px;padding:12px;background:#0a4a7a;color:#fff;border-radius:8px;text-decoration:none}
+.loading{text-align:center;padding:50px}
+</style>
+</head>
+<body>
+<div id="result" class="loading">Checking... Please Wait</div>
+
+<script>
+async function load(){
+  const params = new URLSearchParams(window.location.search);
+  const searchId = (params.get('id') || '').trim().toUpperCase();
+  const resultDiv = document.getElementById('result');
+
+  if(!searchId){
+    resultDiv.innerHTML = `<div class="box"><div class="head red"><h2>No ID Given</h2></div><div class="content"><p>URL me ?id=ZPI-001 lagao</p><a class="btn" href="index.html">Go Home</a></div></div>`;
+    return;
+  }
+
+  try{
+    const res = await fetch('students.json?v=' + Date.now());
+    const data = await res.json();
+    
+    // Support both Array and Object format
+    let students = [];
+    if(Array.isArray(data)){ students = data; }
+    else { students = Object.values(data); }
+
+    const found = students.find(s => (s.id || '').toUpperCase() === searchId);
+
+    if(found){
+      resultDiv.innerHTML = `
+      <div class="box">
+        <div class="head green">
+          <h2>✅ Verified</h2>
+          <p>Certificate is Authentic</p>
+        </div>
+        <div class="content">
+          <div class="row"><b>Certificate ID:</b><span>${found.id}</span></div>
+          <div class="row"><b>Student Name:</b><span>${found.name}</span></div>
+          <div class="row"><b>Father Name:</b><span>${found.father || '-'}</span></div>
+          <div class="row"><b>Course:</b><span>${found.course}</span></div>
+          <div class="row"><b>Session:</b><span>${found.session}</span></div>
+          <div class="row"><b>Date:</b><span>${found.date}</span></div>
+          <a class="btn" href="index.html">Verify Another</a>
+        </div>
+      </div>`;
+    } else {
+      resultDiv.innerHTML = `
+      <div class="box">
+        <div class="head red">
+          <h2>❌ Not Found</h2>
+          <p>No record for ${searchId}</p>
+        </div>
+        <div class="content">
+          <p>ID <b>${searchId}</b> database me nahi mila.</p>
+          <p style="margin-top:10px;font-size:13px;color:#666">Available: ${students.map(s=>s.id).join(', ')}</p>
+          <a class="btn" href="index.html">Try Again</a>
+        </div>
+      </div>`;
+    }
+  }catch(e){
+    resultDiv.innerHTML = `<div class="box"><div class="head red"><h2>Error</h2></div><div class="content"><p>students.json load nahi ho raha: ${e.message}</p></div></div>`;
+  }
+}
+load();
+</script>
+</body>
+</html>
