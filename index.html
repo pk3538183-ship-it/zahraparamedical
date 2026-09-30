@@ -1,11 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zahra Paramedical Courses - Official Certificate Verification</title>
-<meta name="description" content="Zahra Paramedical Short Courses - Official Portal. Verify Certificate ZPI-003, ZPI-004, ZPI-005 for Aid Nurse Training Course Online.">
-<meta name="keywords" content="Zahra Paramedical, Zahra Paramedical Courses, ZPI verification, Aid Nurse Training">
-<meta property="og:title" content="Zahra Paramedical Courses">
-<meta property="og:description" content="Official Certificate Verification Portal for Zahra Paramedical Short Courses">
-<meta property="og:site_name" content="Zahra Paramedical Courses">
-<meta name="google-site-verification" content="zahra-paramedical-courses">
+<meta name="description" content="Official verification portal for Zahra Paramedical Short Courses. Verify Aid Nurse Training Certificate online.">
+<style>
+body{font-family:Arial;text-align:center;padding:30px;background:#f0f8ff}
+.box{background:white;padding:30px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:500px;margin:auto}
+input{padding:12px;width:80%;border:2px solid #007bff;border-radius:8px;margin:10px}
+button{padding:12px 25px;background:#007bff;color:white;border:none;border-radius:8px;cursor:pointer;font-size:16px}
+h1{color:#007bff}
+</style>
 </head>
+<body>
+<div class="box">
+<h1>Zahra Paramedical Courses</h1>
+<p>Official Certificate Verification Portal</p>
+<input type="text" id="certId" placeholder="Enter Certificate ID e.g. ZPI-003">
+<br>
+<button onclick="verify()">Verify Certificate</button>
+<p id="result"></p>
+</div>
+<script>
+function verify(){
+let id=document.getElementById('certId').value.trim().toUpperCase();
+if(!id){document.getElementById('result').innerHTML='Please enter ID';return;}
+window.location.href='verify.html?id='+id;
+}
+</script>
+</body>
+</html>
