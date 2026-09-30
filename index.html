@@ -3,49 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zahra Paramedical Courses - Admissions Open | Aid Nurse Training</title>
-<meta name="description" content="Zahra Paramedical Short Courses - Admissions Open for Aid Nurse Training. Contact for admission and verify certificate online.">
+<title>Zahra Paramedical Courses - Admissions Open</title>
 <style>
-body{font-family:Arial, sans-serif;margin:0;background:#f5f9ff}
+body{font-family:Arial;margin:0;background:#f5f9ff}
 .header{background:#0d47a1;color:white;padding:25px;text-align:center}
-.header h1{margin:0;font-size:28px}
-.header p{margin:5px}
-.nav{background:#1565c0;padding:10px;text-align:center}
-.nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold}
 .box{background:white;margin:20px auto;padding:25px;border-radius:12px;max-width:600px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
 h2{color:#0d47a1;border-bottom:2px solid #0d47a1;padding-bottom:5px}
 input,select,textarea{width:95%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
-button{width:100%;padding:14px;background:#0d47a1;color:white;border:none;border-radius:8px;font-size:18px;cursor:pointer;margin-top:10px}
-button:hover{background:#08306b}
-.verify-box{background:#e3f2fd}
+button{width:100%;padding:14px;background:#0d47a1;color:white;border:none;border-radius:8px;font-size:18px;cursor:pointer}
 .contact{background:#0d47a1;color:white;text-align:center;padding:20px}
-.contact a{color:#ffeb3b;text-decoration:none;font-weight:bold;font-size:18px}
+.contact a{color:#ffeb3b;text-decoration:none;font-weight:bold}
 </style>
 </head>
 <body>
-
 <div class="header">
 <h1>ZAHRA PARAMEDICAL COURSES</h1>
 <p>Short Courses & Training Institute</p>
-<p>Registered | Professional Training</p>
 </div>
 
-<div class="nav">
-<a href="#admission">Admission</a>
-<a href="#verify">Verification</a>
-<a href="#contact">Contact</a>
-</div>
-
-<div class="box" id="verify">
+<div class="box">
 <h2>🔍 Certificate Verification</h2>
-<p>Apna Certificate ID dalein (Jaise ZPI-003)</p>
-<input type="text" id="certId" placeholder="Enter Certificate ID">
+<input type="text" id="certId" placeholder="Enter Certificate ID e.g. ZPI-003">
 <button onclick="verify()">Verify Now</button>
 </div>
 
-<div class="box" id="admission">
+<div class="box">
 <h2>📝 Online Admission Form</h2>
-<p>Neeche form bharein, WhatsApp par direct jayega:</p>
 <input type="text" id="name" placeholder="Student Ka Naam">
 <input type="text" id="father" placeholder="Father Name">
 <input type="text" id="phone" placeholder="WhatsApp Number">
@@ -53,29 +36,17 @@ button:hover{background:#08306b}
 <option>Aid Nurse Training Course</option>
 <option>OT Technician</option>
 <option>Lab Technician</option>
-<option>Other Course</option>
 </select>
 <textarea id="address" placeholder="Address"></textarea>
 <button onclick="sendAdmission()" style="background:#25D366;">Send Admission on WhatsApp</button>
 </div>
 
-<div class="box" id="courses">
-<h2>📚 Our Courses</h2>
-<ul>
-<li><b>Aid Nurse Training (1 Year)</b> - Admission Open</li>
-<li>OT Technician Course</li>
-<li>Lab Technician Course</li>
-<li>Pharmacy Technician</li>
-</ul>
-</div>
-
-<div class="contact" id="contact">
+<div class="contact">
 <h2 style="color:white;border:none">📞 Contact Us</h2>
-<p>Admission & Verification ke liye rabta karein:</p>
-<p><a href="tel:03001234567">📞 0300-1234567</a></p>
-<p><a href="https://wa.me/923001234567">💬 WhatsApp: 0300-1234567</a></p>
-<p style="font-size:14px;margin-top:15px;">Website: pk3538183-ship-it.github.io/zahraparamedical/</p>
-<p style="font-size:13px;">Google par search karein: "Zahra Paramedical Courses"</p>
+<p>Admission ke liye rabta karein:</p>
+<p><a href="tel:03303270331">📞 0330-3270331</a></p>
+<p><a href="https://wa.me/923303270331">💬 WhatsApp: 0330-3270331</a></p>
+<p>Google par search: Zahra Paramedical Courses</p>
 </div>
 
 <script>
@@ -92,9 +63,8 @@ let c=document.getElementById('course').value;
 let a=document.getElementById('address').value;
 if(!n||!p){alert('Naam aur Number zaruri hai');return;}
 let msg=`*NEW ADMISSION - Zahra Paramedical*%0AName: ${n}%0AFather: ${f}%0APhone: ${p}%0ACourse: ${c}%0AAddress: ${a}`;
-window.open(`https://wa.me/923001234567?text=${msg}`,'_blank');
+window.open(`https://wa.me/923303270331?text=${msg}`,'_blank');
 }
-// Yahan apna number change kar sakte hain: 923001234567 ki jagah apna number likhein 92 ke saath
 </script>
 </body>
 </html>
