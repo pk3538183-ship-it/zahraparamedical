@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zahra Paramedical Institute</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial;background:#eef5ff;min-height:100vh}
-.header{background:#0a4a7a;color:#fff;padding:20px;text-align:center}
-.header h1{font-size:24px}
-.container{max-width:500px;margin:40px auto;background:#fff;padding:30px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center}
-input{width:100%;padding:14px;border:2px solid #0a4a7a;border-radius:8px;font-size:16px;margin-top:15px}
-button{width:100%;padding:14px;background:#0a4a7a;color:#fff;border:none;border-radius:8px;margin-top:15px;font-size:18px;font-weight:bold;cursor:pointer}
-.info{margin-top:20px;color:#555;font-size:14px}
-</style>
+<title>Zahra Paramedical Courses - Official Certificate Verification</title>
+<meta name="description" content="Zahra Paramedical Short Courses - Official Portal. Verify Certificate ZPI-003, ZPI-004, ZPI-005 for Aid Nurse Training Course Online.">
+<meta name="keywords" content="Zahra Paramedical, Zahra Paramedical Courses, ZPI verification, Aid Nurse Training">
+<meta property="og:title" content="Zahra Paramedical Courses">
+<meta property="og:description" content="Official Certificate Verification Portal for Zahra Paramedical Short Courses">
+<meta property="og:site_name" content="Zahra Paramedical Courses">
+<meta name="google-site-verification" content="zahra-paramedical-courses">
 </head>
-<body>
-<div class="header">
-<h1>ZAHRA PARAMEDICAL INSTITUTE</h1>
-<p>Certificate Verification System</p>
-</div>
-<div class="container">
-<h2>🔍 Verify Certificate</h2>
-<p>Enter Roll No / Certificate ID</p>
-<input type="text" id="roll" placeholder="e.g. ZPI-003">
-<button onclick="verify()">Verify Now</button>
-<div class="info">Example: ZPI-001, ZPI-002, ZPI-003...</div>
-</div>
-<script>
-function verify(){
- let id=document.getElementById('roll').value.trim();
- if(!id){alert('Please enter ID');return;}
- window.location.href='verify.html?id='+encodeURIComponent(id);
-}
-</script>
-</body>
-</html>
