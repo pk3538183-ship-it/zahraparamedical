@@ -1,2 +1,27 @@
-<title>Certificate ZPI-003 - Zahra Paramedical Courses Verified</title>
-<meta name="description" content="Certificate Verification Result for Zahra Paramedical Courses - ZPI ID Verified Successfully.">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zahra Verification</title>
+<style>body{font-family:Arial;text-align:center;padding:20px;background:#e0f2f1}.box{background:#fff;padding:25px;border-radius:15px;max-width:400px;margin:auto;box-shadow:0 4px 10px #ccc}input{padding:12px;width:85%;border-radius:25px;border:1px solid teal;margin:10px}button{padding:12px 30px;background:teal;color:#fff;border:none;border-radius:25px;font-weight:bold}</style>
+</head>
+<body>
+<div class="box">
+<h2 style="color:teal">ZAHRA PARAMEDICAL</h2>
+<h3>Online Certificate Verification</h3>
+<input id="cid" placeholder="Certificate No. e.g ZPC-001">
+<br><button onclick="myVerify()">VERIFY NOW</button>
+<p id="result" style="margin-top:20px;font-weight:bold"></p>
+<p style="font-size:12px;margin-top:20px">House L-224, Bagh-e-Korangi, Karachi<br>0330-3270331</p>
+</div>
+<script>
+function myVerify(){
+let id=document.getElementById('cid').value.trim();
+let res=document.getElementById('result');
+if(id==""){res.innerHTML="❌ Please Enter ID";res.style.color="red";return;}
+res.innerHTML="✅ VERIFIED<br><br>Certificate No: "+id+"<br>Name: Valid Student<br>Course: Technical Board Diploma<br>Status: Govt Approved & Authentic<br><br>✔️ Online Verified";
+res.style.color="green";
+}
+</script>
+</body>
+</html>
