@@ -2,73 +2,59 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zahra Paramedical - Certificate Verification</title>
+<title>Zahra Paramedical - Diploma</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
-body{font-family:'Segoe UI',Arial;background:#e0f2f1;margin:0;padding:10px}
-.search-box{background:#fff;max-width:500px;margin:10px auto;padding:20px;border-radius:15px;text-align:center;box-shadow:0 3px 10px #0002}
-input{padding:12px;width:80%;border:2px solid teal;border-radius:25px;text-align:center;font-size:16px}
-button{padding:12px 30px;background:teal;color:#fff;border:none;border-radius:25px;font-weight:bold;margin-top:10px;cursor:pointer}
-#cert-area{display:none;justify-content:center;margin-top:20px}
-.cert{width:800px;background:#fffdf5;border:12px solid #0d4f4f;outline:4px solid #c5a35a;padding:25px;position:relative;text-align:center;box-sizing:border-box}
-.cert-border{border:2px solid #c5a35a;padding:20px}
-h1{color:#0d4f4f;margin:0;font-size:28px} h2{color:#8a6d3b;letter-spacing:3px;margin:5px 0}
-.line{border-bottom:1px solid #333;display:inline-block;min-width:300px;font-weight:bold;font-size:20px;color:#000;padding:5px}
-.footer{display:flex;justify-content:space-between;margin-top:50px;font-size:12px}
-.btns{margin-top:15px}
-.btns button{background:#2e7d32;margin:5px}
+body{font-family:Arial;background:#e0f2f1;margin:0;padding:10px}
+.search{background:#fff;max-width:500px;margin:10px auto;padding:20px;border-radius:15px;text-align:center;box-shadow:0 3px 10px #0002}
+input{padding:12px;width:80%;border:2px solid teal;border-radius:25px;text-align:center}
+button{padding:12px 25px;background:teal;color:#fff;border:none;border-radius:25px;font-weight:bold;margin-top:10px}
+#certArea{display:none;justify-content:center;margin-top:15px}
+.cert{width:750px;background:#fffef2;border:10px solid #0a4a4a;padding:20px;text-align:center}
+.line{border-bottom:1px solid #000;display:inline-block;min-width:280px;font-weight:bold;font-size:18px;color:#000}
 </style>
 </head>
 <body>
-<div class="search-box">
-<h2 style="color:teal;margin:0">ZAHRA PARAMEDICAL COURSES</h2>
-<p>Online Certificate Verification & Diploma</p>
-<input id="cid" placeholder="Certificate No. e.g ZPC-001">
-<br><button onclick="verify()">VERIFY & SHOW DIPLOMA</button>
+<div class="search">
+<h2 style="color:teal;margin:0">ZAHRA PARAMEDICAL</h2>
+<p>Enter Certificate No.</p>
+<input id="cid" placeholder="ZPC-001">
+<br><button onclick="verify()">SHOW DIPLOMA</button>
 <p id="msg" style="color:red;font-weight:bold"></p>
 </div>
 
-<div id="cert-area">
-<div>
+<div id="certArea"><div>
 <div id="certificate" class="cert">
-<div class="cert-border">
-<h1>ZAHRA PARAMEDICAL COURSES</h1>
-<p style="font-size:11px;letter-spacing:1px">ACCREDITED PARAMEDICAL TRAINING INSTITUTE • KARACHI</p>
-<h2 style="margin:20px 0 10px 0">PARAMEDICAL DIPLOMA CERTIFICATE</h2>
-<p style="font-size:18px;color:#8a6d3b;font-weight:bold;letter-spacing:4px">THIS IS TO CERTIFY THAT</p>
-<p style="margin-top:25px">Student Name : <span id="c_name" class="line"></span></p>
-<p>Father Name : <span id="c_father" class="line"></span></p>
-<p>Course Name : <span id="c_course" class="line"></span></p>
-<p style="margin-top:20px;font-size:14px">Has Successfully Completed The Paramedical Diploma Program</p>
-<div style="display:flex;justify-content:space-between;margin-top:30px;font-size:14px;font-weight:bold">
-<span>Certificate No: <span id="c_id"></span></span>
-<span>Date: <span id="c_date"></span></span>
-<span>Duration: <span id="c_dur"></span></span>
+<h2>ZAHRA PARAMEDICAL COURSES</h2>
+<h3 style="color:#8a6d3b">DIPLOMA CERTIFICATE</h3>
+<p style="color:#8a6d3b;letter-spacing:3px;font-weight:bold">THIS IS TO CERTIFY THAT</p>
+<p>Student Name: <span id="c_name" class="line"></span></p>
+<p>Father Name: <span id="c_father" class="line"></span></p>
+<p>Course: <span id="c_course" class="line"></span></p>
+<p style="margin-top:25px"><b>Certificate No:</b> <span id="c_id"></span> | <b>Date:</b> <span id="c_date"></span> | <b>Duration:</b> <span id="c_dur"></span></p>
+<p style="margin-top:30px;color:green;font-weight:bold">✅ VERIFIED - Govt Approved & Authentic</p>
+<p style="font-size:10px;margin-top:20px">L-224 Bagh-e-Korangi, Karachi | 0330-3270331 | Verify: pk3538183-ship-it.github.io/zahraparamedical/verify.html</p>
 </div>
-<div class="footer">
-<div>Course Director<br><br>________________<br>Signature & Stamp</div>
-<div style="color:green;font-weight:bold">✅ Online Verified<br>Govt Approved & Authentic</div>
-<div>Authorized Signatory<br><br>________________<br>Signature & Stamp</div>
+<div style="text-align:center;margin-top:10px">
+<button onclick="download()" style="background:green">📥 Download JPG</button>
 </div>
-<p style="font-size:9px;margin-top:15px">House No L-224, Near Bagh-e-Korangi, Karachi | 0330-3270331 | Verify at: pk3538183-ship-it.github.io/zahraparamedical/verify.html</p>
-</div>
-</div>
-<div class="btns" style="text-align:center">
-<button onclick="downloadCert()">📥 Download Certificate (JPG)</button>
-<button onclick="window.print()" style="background:teal">🖨️ Print Certificate</button>
-</div>
-</div>
-</div>
+</div></div>
 
 <script>
-let students=[];
-fetch('students.json').then(r=>r.json()).then(d=>students=d);
+// YAHAN APNE STUDENTS KE NAAM LIKHO - YEHI EDIT KARNA HAI
+let students = [
+  {id:"ZPC-001", name:"Ayesha Khan", father:"Ahmed Khan", course:"Nursing Assistant", duration:"1 Year", date:"15-May-2026"},
+  {id:"ZPC-002", name:"Muhammad Ali", father:"Ibrahim Ali", course:"OT Technician", duration:"1 Year", date:"15-May-2026"},
+  {id:"ZPC-003", name:"Fatima Zahra", father:"Hussain Ahmed", course:"Dispenser Diploma", duration:"1 Year", date:"15-May-2026"},
+  {id:"ZPC-004", name:"Bilal Ahmed", father:"Rashid Ahmed", course:"Lab Technician", duration:"2 Years", date:"15-May-2026"}
+];
+
 function verify(){
 let id=document.getElementById('cid').value.trim().toUpperCase();
 let msg=document.getElementById('msg');
-if(!id){msg.innerText="ID likhein";return;}
 let s=students.find(x=>x.id.toUpperCase()===id);
-if(!s){msg.innerText="❌ Record Not Found";document.getElementById('cert-area').style.display="none";return;}
+if(!id){msg.innerText="ID Likho";return;}
+if(!s){msg.innerText="❌ ID Not Found - students list me ye ID nahi hai";document.getElementById('certArea').style.display="none";return;}
 msg.innerText="";
 document.getElementById('c_name').innerText=s.name;
 document.getElementById('c_father').innerText=s.father;
@@ -76,14 +62,11 @@ document.getElementById('c_course').innerText=s.course;
 document.getElementById('c_id').innerText=s.id;
 document.getElementById('c_date').innerText=s.date;
 document.getElementById('c_dur').innerText=s.duration;
-document.getElementById('cert-area').style.display="flex";
+document.getElementById('certArea').style.display="flex";
 }
-function downloadCert(){
-html2canvas(document.getElementById('certificate')).then(canvas=>{
-let link=document.createElement('a');
-link.download=document.getElementById('c_id').innerText+'-Diploma.jpg';
-link.href=canvas.toDataURL();
-link.click();
+function download(){
+html2canvas(document.getElementById('certificate')).then(c=>{
+let a=document.createElement('a');a.download=document.getElementById('c_id').innerText+'.jpg';a.href=c.toDataURL();a.click();
 });
 }
 </script>
