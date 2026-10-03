@@ -1,42 +1,26 @@
 [
-    {
-        "id": "ZPI-001",
-        "name": "Aqib Gilal",
-        "father": "Mukhtiar Ahmed",
-        "course": "OT Technician",
-        "session": "2024-25",
-        "date": "2025-06-30"
-    },
-    {
-        "id": "ZPI-002",
-        "name": "Sana Bibi",
-        "father": "Gul Khan",
-        "course": "Lab Technician",
-        "session": "2024-25",
-        "date": "2025-06-30"
-    },
-    {
-        "id": "ZPI-003",
-        "name": "Saqib Gilal",
-        "father": "Mukhtiar Ahmed",
-        "course": "Aid Nurse",
-        "session": "2024-25",
-        "date": "2025-06-30"
-    },
-    {
-        "id": "ZPI-004",
-        "name": "Mairaj",
-        "father": "Abdul Sattar",
-        "course": "Aid Nurse",
-        "session": "2024-25",
-        "date": "2025-06-30"
-    },
-    {
-        "id": "ZPI-005",
-        "name": "Sheeraz",
-        "father": "Ghulam Mustafa",
-        "course": "Aid Nurse",
-        "session": "2024-25",
-        "date": "2025-06-30"
-    }
+  {
+    "id": "ZPC-001",
+    "name": "Ayesha Khan",
+    "father": "Ahmed Khan",
+    "course": "Nursing Assistant Diploma",
+    "duration": "1 Year",
+    "date": "15-Jan-2026"
+  },
+  {
+    "id": "ZPC-002",
+    "name": "Muhammad Ali",
+    "father": "Ibrahim Ali",
+    "course": "OT Technician Diploma",
+    "duration": "1 Year",
+    "date": "15-Jan-2026"
+  },
+  {
+    "id": "ZPC-003",
+    "name": "Fatima Zahra",
+    "father": "Hussain Ahmed",
+    "course": "Dispenser Diploma",
+    "duration": "1 Year",
+    "date": "15-Jan-2026"
+  }
 ]
