@@ -1,26 +1,8 @@
-[
-  {
+{
     "id": "ZPC-001",
-    "name": "Ayesha Khan",
-    "father": "Ahmed Khan",
+    "name": "Aqib Gilal",
+    "father": "Mukhtiar Ahmed",
     "course": "Nursing Assistant Diploma",
     "duration": "1 Year",
     "date": "15-Jan-2026"
-  },
-  {
-    "id": "ZPC-002",
-    "name": "Muhammad Ali",
-    "father": "Ibrahim Ali",
-    "course": "OT Technician Diploma",
-    "duration": "1 Year",
-    "date": "15-Jan-2026"
-  },
-  {
-    "id": "ZPC-003",
-    "name": "Fatima Zahra",
-    "father": "Hussain Ahmed",
-    "course": "Dispenser Diploma",
-    "duration": "1 Year",
-    "date": "15-Jan-2026"
-  }
-]
+}
