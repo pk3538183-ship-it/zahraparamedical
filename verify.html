@@ -2,25 +2,37 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zahra Verification</title>
-<style>body{font-family:Arial;text-align:center;padding:20px;background:#e0f2f1}.box{background:#fff;padding:25px;border-radius:15px;max-width:400px;margin:auto;box-shadow:0 4px 10px #ccc}input{padding:12px;width:85%;border-radius:25px;border:1px solid teal;margin:10px}button{padding:12px 30px;background:teal;color:#fff;border:none;border-radius:25px;font-weight:bold}</style>
+<title>Zahra Paramedical - Verify</title>
+<style>body{font-family:Arial;background:#e0f2f1;padding:15px;margin:0}.box{background:#fff;max-width:450px;margin:20px auto;padding:25px;border-radius:15px;box-shadow:0 5px 15px #0002;text-align:center}input{padding:13px;width:85%;border:2px solid teal;border-radius:25px;text-align:center;font-size:16px}button{padding:13px 35px;background:teal;color:#fff;border:none;border-radius:25px;font-size:16px;font-weight:bold;margin-top:12px;cursor:pointer}#card{text-align:left;background:#f0faf9;border:1px solid #b2dfdb;padding:15px;border-radius:12px;margin-top:20px;display:none}.label{color:#555;font-size:13px}.val{font-weight:bold;font-size:16px;color:#000;margin-bottom:8px}</style>
 </head>
 <body>
 <div class="box">
-<h2 style="color:teal">ZAHRA PARAMEDICAL</h2>
-<h3>Online Certificate Verification</h3>
+<h2 style="color:teal;margin:0">ZAHRA PARAMEDICAL</h2>
+<p style="margin:5px 0 15px 0;font-weight:bold">Online Certificate Verification</p>
 <input id="cid" placeholder="Certificate No. e.g ZPC-001">
-<br><button onclick="myVerify()">VERIFY NOW</button>
-<p id="result" style="margin-top:20px;font-weight:bold"></p>
-<p style="font-size:12px;margin-top:20px">House L-224, Bagh-e-Korangi, Karachi<br>0330-3270331</p>
+<br><button onclick="verify()">VERIFY NOW</button>
+<div id="card"></div>
+<p id="msg" style="font-weight:bold;margin-top:15px"></p>
+<p style="font-size:11px;margin-top:25px;color:#555">House No L-224, Near Bagh-e-Korangi, Karachi<br>0330-3270331 | zahraparamedical.com</p>
 </div>
 <script>
-function myVerify(){
-let id=document.getElementById('cid').value.trim();
-let res=document.getElementById('result');
-if(id==""){res.innerHTML="❌ Please Enter ID";res.style.color="red";return;}
-res.innerHTML="✅ VERIFIED<br><br>Certificate No: "+id+"<br>Name: Valid Student<br>Course: Technical Board Diploma<br>Status: Govt Approved & Authentic<br><br>✔️ Online Verified";
-res.style.color="green";
+let students=[];
+fetch('students.json').then(r=>r.json()).then(data=>{students=data;}).catch(e=>{console.log("json load error")});
+function verify(){
+let id=document.getElementById('cid').value.trim().toUpperCase();
+let card=document.getElementById('card');
+let msg=document.getElementById('msg');
+if(!id){msg.innerHTML="❌ ID Likhein";msg.style.color="red";card.style.display="none";return;}
+let s=students.find(x=>x.id.toUpperCase()===id);
+if(s){
+card.style.display="block";
+card.innerHTML=`<div style='text-align:center;color:green;font-weight:bold;font-size:18px;margin-bottom:10px'>✅ VERIFIED</div><div class='label'>Certificate No:</div><div class='val'>${s.id}</div><div class='label'>Student Name:</div><div class='val'>${s.name}</div><div class='label'>Father Name:</div><div class='val'>${s.father}</div><div class='label'>Course / Diploma:</div><div class='val'>${s.course}</div><div class='label'>Duration:</div><div class='val'>${s.duration}</div><div class='label'>Issue Date:</div><div class='val'>${s.date}</div><div style='margin-top:10px;padding-top:10px;border-top:1px dashed green;text-align:center;color:green;font-weight:bold'>✔️ Govt Approved & Authentic<br>✔️ Online Verified</div>`;
+msg.innerHTML="";
+}else{
+card.style.display="none";
+msg.innerHTML="❌ NOT FOUND<br><span style='font-size:13px;color:#333'>Ye Certificate No. record me nahi hai. Office se rabta karein.</span>";
+msg.style.color="red";
+}
 }
 </script>
 </body>
